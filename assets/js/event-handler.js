@@ -76,5 +76,7 @@ search_form.addEventListener("submit", async (e) => {
 });
 
 document.querySelector("#input-search").addEventListener("focus", async (e) => {
-  e.target.value = await navigator.clipboard.readText().trim();
+  if (navigator) {
+    e.target.value = await navigator.clipboard.readText();
+  }
 });
