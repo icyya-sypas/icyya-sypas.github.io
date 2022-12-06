@@ -74,3 +74,7 @@ search_form.addEventListener("submit", async (e) => {
     addPaper(i.item);
   });
 });
+
+document.querySelector("#input-search").addEventListener("focus", async (e) => {
+  e.target.value = await navigator.clipboard.readText().trim();
+});
