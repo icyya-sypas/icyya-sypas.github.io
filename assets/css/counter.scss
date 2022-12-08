@@ -1,0 +1,42 @@
+:root {
+  --hero-bg: royalblue;
+  --hero-txt: #fff;
+  --search-btn-bg: #fff;
+  --card-bg: #14303e;
+}
+
+article > div {
+  padding: 0 1.5rem;
+}
+#results article {
+  padding: 2rem 0;
+  .reg-no {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .result-title {
+    color: #fff;
+    background-color: var(--hero-bg);
+    padding: 1.5rem;
+    border-radius: 16px 16px 0 0;
+    border-bottom: none;
+  }
+  .author {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  .col {
+    display: grid;
+    grid-template-columns: auto auto;
+    color: #fff;
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 0 0 16px 16px;
+    border-top: 2px dashed var(--hero-bg);
+    margin-top: -8px;
+    margin-bottom: 1rem;
+  }
+}
