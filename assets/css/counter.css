@@ -1,8 +1,19 @@
 :root {
   --hero-bg: royalblue;
   --hero-txt: #fff;
-  --search-btn-bg: #fff;
+  --search-btn-bg: royalblue;
   --card-bg: #14303e;
+}
+
+.hero {
+  background-color: var(--card-bg);
+}
+
+#search-wrapper {
+  background-color: orange;
+}
+#search-wrapper button {
+  color: #fff;
 }
 
 .schedule-item {

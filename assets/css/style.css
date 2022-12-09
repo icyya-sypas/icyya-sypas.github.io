@@ -83,41 +83,42 @@ body {
 }
 
 .hero {
-  height: 400px;
   background-color: var(--hero-bg);
   color: var(--hero-txt);
+  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 10px;
-  padding: 30px;
-}
-.hero .top-hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 10px;
-}
-.hero .top-hero .title {
-  font-size: 2.4rem;
   text-align: center;
+  row-gap: 8px;
 }
-.hero .top-hero .sub-title {
-  font-size: 1.8rem;
+.hero p {
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+#search-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 3rem 0;
+  background-color: royalblue;
+}
+#search-wrapper .title {
+  font-size: 2rem;
   text-transform: uppercase;
-  text-align: center;
+  color: var(--hero-txt);
 }
-.hero .bottom-hero #search-wrapper {
-  margin-top: 3rem;
-}
-.hero .bottom-hero #search-wrapper #search-form {
+#search-wrapper #search-form {
   display: flex;
   flex-direction: row;
   gap: 4px;
 }
-.hero .bottom-hero #search-wrapper #search-form #search-field {
+#search-wrapper #search-form #search-field {
   padding: 0.5rem;
   color: #000;
   border: none;
@@ -125,17 +126,17 @@ body {
   background-color: #ddd;
   border-radius: 0;
 }
-.hero .bottom-hero #search-wrapper #search-form #search-field option {
+#search-wrapper #search-form #search-field option {
   word-wrap: break-word;
   padding: 10px;
 }
-.hero .bottom-hero #search-wrapper #search-form #input-search {
+#search-wrapper #search-form #input-search {
   width: 500px;
   padding: 0.6em;
   box-sizing: border-box;
   border: none;
 }
-.hero .bottom-hero #search-wrapper #search-form #btn-search {
+#search-wrapper #search-form #btn-search {
   border: none;
   padding: 10px 20px;
   background-color: var(--search-btn-bg);
@@ -237,19 +238,5 @@ body {
   }
   #results-wrapper {
     padding: 16px;
-  }
-  .hero {
-    height: 450px !important;
-    padding: 30px 16px !important;
-    row-gap: 0px !important;
-  }
-  .hero .top-hero {
-    row-gap: 20px;
-  }
-  .hero .top-hero .title {
-    font-size: 1.8rem !important;
-  }
-  .hero .top-hero .sub-title {
-    font-size: 1.4rem !important;
   }
 }/*# sourceMappingURL=style.css.map */
