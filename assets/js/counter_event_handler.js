@@ -71,8 +71,8 @@ search_form.addEventListener("submit", async (e) => {
   });
 });
 
-document.querySelector("#input-search").addEventListener("focus", async (e) => {
-  if (navigator) {
-    e.target.value = await navigator.clipboard.readText();
-  }
-});
+// document.querySelector("#input-search").addEventListener("focus", async (e) => {
+//   if (navigator) {
+//     e.target.value = await navigator.clipboard.readText();
+//   }
+// });
