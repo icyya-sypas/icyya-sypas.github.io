@@ -68,8 +68,13 @@
     flex-wrap: wrap !important;
   }
   .col {
-    flex: 1;
     height: 100%;
     border: none !important;
+  }
+  .four-cols .col {
+    flex: 1;
+  }
+  .three-cols .col:last-child {
+    flex: 1;
   }
 }/*# sourceMappingURL=counter.css.map */
