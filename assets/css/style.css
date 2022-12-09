@@ -107,6 +107,7 @@ body {
 .hero .top-hero .sub-title {
   font-size: 1.8rem;
   text-transform: uppercase;
+  text-align: center;
 }
 .hero .bottom-hero #search-wrapper {
   margin-top: 3rem;
