@@ -365,9 +365,9 @@ const addPaper = (row) => {
       <span class='col-body'>${row.category}</span>
     </div>
     <div class='col' style='background:${
-      row.m_o_p === "ONLINE" ? "#3b9eff" : "#ff5c75"
+      row.m_o_p === "ONLINE" ? "#ff6262" : "#50cc50"
     }'>
-      <span class='col-title'>PST Mode</span>
+      <span class='col-title'>Presentation Mode</span>
       <span class='col-body'>${row.m_o_p}</span>
     </div>
   </section>  
