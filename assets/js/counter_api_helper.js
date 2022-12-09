@@ -1,5 +1,5 @@
 const API =
-  "https://script.google.com/macros/s/AKfycbzJn4oaMEkwwT5gy_5oPm_pZFzQlDj6km0d0TNQYnMI9kdoVCZMbv5bOh8xG6z1cXE/exec";
+  "https://script.google.com/macros/s/AKfycbyP_XSJHyNV9gdXfwrQRxGFBPWsV-nxqvO-W5ADoGCG2Fxw3W4ZTw_rADgZzCjzFtaBwg/exec";
 
 const fetchWithAbort = async (resource, options = {}) => {
   if (window.controller) {
@@ -324,81 +324,56 @@ const getFilteredDataBy = (category_filters, track_filters, data) => {
   }
 };
 
-const addPaper = (paper) => {
+const getFormattedDate = (n) => {
+  var d = [n.getDate(), n.getMonth() + 1, n.getFullYear()];
+  return d.join("/");
+};
+
+const addPaper = (row) => {
+  const date = new Date(row.day);
   const outer_html = `
-  <a class="result-title">
-  <div class="reg-no">
-    <span class="result-section-title">REGISTRATION NUMBER:</span>
-    <span>${paper.reg_no ? paper.reg_no : "N/A"}</span>
-  </div>  
-  <span>${paper.paper_title ? paper.paper_title : "N/A"}</span>
-  <div class="author">
-    <span class="result-section-title">by</span>
-    <span>${paper.full_name.trim()}</span>
-  </div>   
-  </a> 
-  <div class='col'>
-  <div class="venue">
-    <span class="result-section-title">VENUE:</span>
-    <span>${paper.venue ? paper.venue : "N/A"}</span>
-  </div>
-  <div class="time">
-    <span class="result-section-title">TIME:</span>
-    <span>${paper.time ? paper.time : "N/A"}</span>
-  </div>   
-  </div>
-  <div>
-    <span class="result-section-title">UNIVERSITY:</span>
-    <span>${paper.university ? paper.university : "N/A"}</span>
-  </div>
-  <div class="category">
-    <span class="result-section-title">CATEGORY:</span>
-    <span>${paper.category ? paper.category : "N/A"}</span>
-  </div>
-  <div class="track">
-    <span class="result-section-title">TRACK: </span>
-    <span>${paper.track ? paper.track : "N/A"}</span>
-  </div>
-  <div>
-    <span class="result-section-title">UNIVERSITY:</span>
-    <span>${paper.university ? paper.university : "N/A"}</span>
-  </div>
-  <div>
-    <span class="result-section-title">TECHNICAL SESSION:</span>
-    <span>${paper.technical_session ? paper.technical_session : "N/A"}</span>
-  </div>
-  <div>
-    <span class="result-section-title">EMAIL:</span>
-    <span>${paper.email ? paper.email : "N/A"}</span>
-  </div>
-  <div>
-    <span class="result-section-title">MOBILE:</span>
-    <span>${paper.mobile ? paper.mobile : "N/A"}</span>
-  </div>
-  <div>
-    <span class="result-section-title">MODE OF PRESENTATION:</span>
-    <span>${paper.m_o_p ? paper.m_o_p : "N/A"}</span>
-  </div>
-  <div>
-    <span class="result-section-title">CERTIFICATE ISSUED TO:</span>
-    <span>${
-      paper.certificate_issed_to ? paper.certificate_issed_to : "N/A"
-    }</span>
-  </div>
-  <div>
-    <span class="result-section-title">KIT BAG ISSUED TO:</span>
-    <span>${paper.kit_bag_issued_to ? paper.kit_bag_issued_to : "N/A"}</span>
-  </div>
-  <div>
-    <span class="result-section-title">REMARKS:</span>
-    <span>${paper.remarks ? paper.remarks : "N/A"}</span>
-  </div>
-  <div>
-    <span class="result-section-title">PAPER:</span>
-    <span>${paper.paper ? paper.paper : "N/A"}</span>
-  </div>`;
+  <span class='reg-no'>Registration no: ${row.reg_no}</span>
+  <br/>
+  <h2>${row.paper_title}</h2>
+  <section class='author'>By  -  <i>${row.full_name}</i></section>
+  <br/>
+  <section class='four-cols'>
+    <div class='col'>
+      <span class='col-title'>Day</span>
+      <span class='col-body'>${getFormattedDate(date)}</span>
+    </div>
+    <div class='col'>
+      <span class='col-title'>Time</span>
+      <span class='col-body'>${row.time}</span>
+    </div>
+    <div class='col'>
+      <span class='col-title'>Venue</span>
+      <span class='col-body'>${row.venue}</span>
+    </div>
+    <div class='col'>
+      <span class='col-title'>Tech. Session</span>
+      <span class='col-body'>${row.technical_session}</span>
+    </div>
+  </section>
+  <section class='three-cols'>
+    <div class='col'>
+      <span class='col-title'>Track</span>
+      <span class='col-body'>${row.track}</span>
+    </div>
+    <div class='col'>
+      <span class='col-title'>Category</span>
+      <span class='col-body'>${row.category}</span>
+    </div>
+    <div class='col' style='background:${
+      row.m_o_p === "ONLINE" ? "#3b9eff" : "#ff5c75"
+    }'>
+      <span class='col-title'>PST Mode</span>
+      <span class='col-body'>${row.m_o_p}</span>
+    </div>
+  </section>  
+  `;
   const tmp_element = document.createElement("article");
-  tmp_element.className = "result-item";
+  tmp_element.className = "schedule-item";
   tmp_element.innerHTML = outer_html;
   document.querySelector("#results").appendChild(tmp_element);
 };
