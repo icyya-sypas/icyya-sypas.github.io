@@ -377,14 +377,14 @@ const addPaper = (row) => {
   document.querySelector("#results").appendChild(tmp_element);
 };
 
-window.onload = () => {
-  getAll()
-    .then((data) => {
-      data.forEach((paper) => {
-        addPaper(paper);
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-};
+// window.onload = () => {
+//   getAll()
+//     .then((data) => {
+//       data.forEach((paper) => {
+//         addPaper(paper);
+//       });
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//     });
+// };
