@@ -252,7 +252,7 @@ const searchBy = async (key, value) => {
       const data = await res.json();
       document.querySelector("#results").innerHTML = "";
       if (key === "all") {
-        const keys = ["reg_no", "full_name", "title", "email", "mobile"];
+        const keys = ["reg_no", "full_name", "paper_title", "email", "mobile"];
         const options = {
           isCaseSensitive: false,
           includeScore: true,
