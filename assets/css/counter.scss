@@ -35,6 +35,9 @@
     grid-template-columns: 3fr 1fr 1fr;
     background-color: var(--hero-bg);
     border-radius: 0 0 16px 16px;
+    .col:last-child {
+      border-radius: 0 0 16px 0;
+    }
   }
   .col {
     display: flex;
@@ -71,7 +74,10 @@
     height: 100%;
     border: none !important;
   }
-  .four-cols .col {
+  .four-cols .col:nth-child(1) {
+    flex: 1;
+  }
+  .four-cols .col:last-child {
     flex: 1;
   }
   .three-cols .col:last-child {
