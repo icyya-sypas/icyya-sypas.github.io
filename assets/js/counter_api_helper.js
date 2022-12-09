@@ -277,7 +277,6 @@ const searchBy = async (key, value) => {
         ).innerText = `(${search_results_all.length})`;
         return { data: search_results_all };
       } else {
-        const keys = [key];
         const options = {
           isCaseSensitive: false,
           includeScore: true,
