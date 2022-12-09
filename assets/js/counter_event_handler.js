@@ -66,6 +66,9 @@ search_form.addEventListener("submit", async (e) => {
   const search_field = search_form.elements["search-field"].value;
   const search_value = search_form.elements["search-value"].value;
   let search_results = await searchBy(search_field, search_value);
+  if (search_results?.data?.length <= 0) {
+    document.querySelector("#results").innerHTML = "No matches found!";
+  }
   await search_results.data.forEach((i) => {
     addPaper(i.item);
   });
