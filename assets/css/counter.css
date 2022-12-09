@@ -16,7 +16,8 @@
 .schedule-item .reg-no {
   align-self: flex-end;
   padding: 4px 8px;
-  background-color: var(--hero-bg);
+  color: var(--card-bg);
+  background-color: var(--hero-txt);
   border-radius: 8px;
   font-weight: 900;
 }
@@ -57,4 +58,18 @@
   border-radius: 8px;
   align-self: flex-start;
   align-self: flex-end;
+}
+
+@media screen and (max-width: 650px) {
+  .four-cols,
+.three-cols {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+  .col {
+    flex: 1;
+    height: 100%;
+    border: none !important;
+  }
 }/*# sourceMappingURL=counter.css.map */
