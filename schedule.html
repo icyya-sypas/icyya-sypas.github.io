@@ -81,114 +81,42 @@
       </div>
     </nav>
     <section class="hero">
-      <div class="top-hero">
-        <h1 class="title">
-          4th International Conference on Yoga, Yagya & Ayurveda – 2022
-        </h1>
-        <h3 class="sub-title">Research Paper Presentation Schedule</h3>
-      </div>
-      <div class="bottom-hero">
-        <div id="search-wrapper">
-          <form action="" id="search-form">
-            <select name="search-field" id="search-field" required>
-              <option value="all" selected>All</option>
-              <option value="paper_title">Paper Title</option>
-              <option value="full_name">Author</option>
-              <option value="email">Email</option>
-              <option value="mobile">Phone</option>
-            </select>
-            <input
-              type="text"
-              id="input-search"
-              name="search-value"
-              placeholder="Search here..."
-              required
-              min="0"
-            />
-            <button id="btn-search"><i class="bi bi-search"></i></button>
-          </form>
-        </div>
-      </div>
+      <p>4th International Conference on Yoga, Yagya & Ayurveda - 2022</p>
+      <small>Organized by</small>
+      <p>
+        Shriram Yog Training & Research Society, U.P., India & Dev Sanskriti
+        Vishwavidyalaya, Haridwar
+      </p>
     </section>
-    <!-- <section class="filter-wrapper">
-      <fieldset>
-        <legend>Filter by Category</legend>
-        <span>
-          <label>
-            <input type="checkbox" checked name="category" value="AC" />
-            <span>PRACTITIONER / PROFESSIONAL / ACADEMICIAN</span>
-          </label>
-        </span>
-        <span>
-          <label>
-            <input type="checkbox" checked name="category" value="RS" />
-            <span>RESEARCH SCHOLAR</span>
-          </label>
-        </span>
-        <span>
-          <label>
-            <input type="checkbox" checked name="category" value="UG" />
-            <span>UG/PG</span>
-          </label>
-        </span>
-      </fieldset>
+    <section id="search-wrapper">
+      <h3 class="title">Research Paper Presentation Schedule</h3>
+      <form action="" id="search-form">
+        <select name="search-field" id="search-field" required>
+          <option value="all" selected>All</option>
+          <option value="paper_title">Paper Title</option>
+          <option value="full_name">Author</option>
+          <option value="email">Email</option>
+          <option value="mobile">Phone</option>
+        </select>
+        <input
+          type="text"
+          id="input-search"
+          name="search-value"
+          placeholder="Search here..."
+          required
+          min="0"
+        />
+        <button id="btn-search"><i class="bi bi-search"></i></button>
+      </form>
     </section>
-    <section class="filter-wrapper">
-      <fieldset>
-        <legend>Filter by Path</legend>
-        <span>
-          <label>
-            <input
-              type="checkbox"
-              checked
-              name="track"
-              value="ICT & Emerging Technologies for Societal Well-Being"
-            />
-            <span>ICT & Emerging Technologies for Societal Well-Being</span>
-          </label>
-        </span>
-        <span>
-          <label>
-            <input
-              type="checkbox"
-              checked
-              name="track"
-              value="Yoga, Yagya & Ayurveda"
-            />
-            <span>Yoga, Yagya & Ayurveda</span>
-          </label>
-        </span>
-        <span>
-          <label>
-            <input
-              type="checkbox"
-              checked
-              checked
-              name="track"
-              value="Social Work Profession & Yoga ,Yagya, Ayurveda"
-            />
-            <span>Social Work Profession & Yoga ,Yagya, Ayurveda</span>
-          </label>
-        </span>
-        <span>
-          <label>
-            <input
-              type="checkbox"
-              checked
-              name="track"
-              value="Health, Rural, Cultural & Spiritual Tourism"
-            />
-            <span>Health, Rural, Cultural & Spiritual Tourism</span>
-          </label>
-        </span>
-      </fieldset>
-    </section> -->
     <br />
     <section id="results-wrapper">
       <h1 class="result-wrapper-title">
         Schedule List<span id="counter" hidden>(Loading...)</span>
       </h1>
-      <main id="results"></main>
+      <main id="results" style="min-height: 100px">
+        Search above to see your schedule...
+      </main>
     </section>
     <footer class="footer">
       <p>&copy SHRIRAM YOG SOCIETY | All Rights Reserved</p>
