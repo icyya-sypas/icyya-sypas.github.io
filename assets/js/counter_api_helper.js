@@ -331,43 +331,49 @@ const getFormattedDate = (n) => {
 const addPaper = (row) => {
   const date = new Date(row.day);
   const outer_html = `
-  <span class='reg-no'>Registration no: ${row.reg_no}</span>
+  <span class='reg-no'>Registration no: ${
+    row.reg_no ? row.reg_no : "N/A"
+  }</span>
   <br/>
-  <h2>${row.paper_title}</h2>
-  <section class='author'>By  -  <i>${row.full_name}</i></section>
+  <h2>${row.paper_title ? row.paper_title : "N/A"}</h2>
+  <section class='author'>By  -  <i>${
+    row.full_name ? row.full_name : "N/A"
+  }</i></section>
   <br/>
   <section class='four-cols'>
     <div class='col'>
       <span class='col-title'>Day</span>
-      <span class='col-body'>${getFormattedDate(date)}</span>
+      <span class='col-body'>${row.day ? getFormattedDate(date) : "N/A"}</span>
     </div>
     <div class='col'>
       <span class='col-title'>Time</span>
-      <span class='col-body'>${row.time}</span>
+      <span class='col-body'>${row.tile ? row.time : "N/A"}</span>
     </div>
     <div class='col'>
       <span class='col-title'>Venue</span>
-      <span class='col-body'>${row.venue}</span>
+      <span class='col-body'>${row.venue ? row.venue : "N/A"}</span>
     </div>
     <div class='col'>
       <span class='col-title'>Tech. Session</span>
-      <span class='col-body'>${row.technical_session}</span>
+      <span class='col-body'>${
+        row.technical_session ? row.technical_session : "N/A"
+      }</span>
     </div>
   </section>
   <section class='three-cols'>
     <div class='col'>
       <span class='col-title'>Track</span>
-      <span class='col-body'>${row.track}</span>
+      <span class='col-body'>${row.track ? row.track : "N/A"}</span>
     </div>
     <div class='col'>
       <span class='col-title'>Category</span>
-      <span class='col-body'>${row.category}</span>
+      <span class='col-body'>${row.category ? row.category : "N/A"}</span>
     </div>
     <div class='col' style='background:${
-      row.m_o_p === "ONLINE" ? "#ff6262" : "#50cc50"
+      row.m_o_p ? (row.m_o_p === "ONLINE" ? "#ff6262" : "#50cc50") : "indigo"
     }'>
       <span class='col-title'>Presentation Mode</span>
-      <span class='col-body'>${row.m_o_p}</span>
+      <span class='col-body'>${row.m_o_p ? row.m_o_p : "N/A"}</span>
     </div>
   </section>  
   `;
